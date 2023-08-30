@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getUsers = async () => {
   let users = await axios
-    .get("https://jsonplaceholder.typicode.com/users")
+    .get("https://ecommerce-uwvs.onrender.com/productos")
     .then(function (response) {
       // handle success
       return response

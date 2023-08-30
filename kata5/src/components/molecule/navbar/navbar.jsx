@@ -82,7 +82,7 @@ function Example(args) {
                     <div>{errors.user}</div>
                   ) : null}
                 </div>
-                <button type="submit" style={{color:'black', backgroundColor:'white', borderRadius:10, border:'white'}}>Submit</button>
+                <button type="submit" style={{color:'black', backgroundColor:'white', borderRadius:10, border:'white'}}>Buscar</button>
                 </div>
               </Form>
             )}
