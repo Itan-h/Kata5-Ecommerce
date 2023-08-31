@@ -1,9 +1,9 @@
 import { getproductos } from "../../../api";
 import { useEffect, useState } from "react";
-import { FcAlarmClock } from "react-icons/fc";
-import Example from "../../molecule/navbar/navbar";
-
-
+import { FcDebian } from "react-icons/fc";
+import { Button, Card, CardBody, CardText, CardTitle } from "reactstrap";
+import Barra from "../../molecule/navbar/navbar";
+import Pie from "../../molecule/footer/footer";
 
 const Home = () => {
   const [productos, setproductos] = useState([]);
@@ -18,47 +18,45 @@ const Home = () => {
 
   useEffect(() => {
       setLoading(false);
-    // console.log(productos.productos)
+      console.log(productos.productos)
   }, [productos]);
 
-  const data = productos.productos
-  console.log(data)
 
-
-  // const searchUser = ({ user }) => {
-  //   let filtered = productos.filter((u) => user == u.name);
-  //   setSearchResult(filtered);
-  //   // return filtered
-  // };
 
   return (
     <>
-      {loading ? (
-        // <Loading />
-        <FcAlarmClock />
-      ) : (
-        <>
-          <div>
-            <Example></Example>
+    <FcDebian />
+    <div>
+            <Barra></Barra>
           </div>
-
-
-          <h1>Welcome to my Home Page 🏠</h1>
-          {JSON.stringify(data)}
+          <div style={{marginTop:'5%',display:'flex', flexDirection:'row', flexWrap:"wrap"}}>
+      {productos.productos != undefined && (
+        <>
+          
+          
           {
-            data.map(u=> <p key={u.id}>{u.img}</p>)
+            productos.productos.map(j=> 
+            <div style={{width:'30%', height:615, borderRight:2, borderLeft:2, display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <Card color="light" style={{width: '100%', height: '100%'}}>
+              <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+              <img src={j.img} style={{height:'65%', width:'80%'}}/>
+              <CardBody>
+                <CardTitle style={{fontSize:'large', fontWeight:'bold'}}>{j.nombre}</CardTitle>
+              <CardText>{j.descripcion}</CardText>
+              <div style={{display:'flex', flexDirection:'row'}}>
+                <CardText style={{fontWeight:'bold'}}>Precio: ${j.precio}</CardText>
+                <Button color="danger" style={{width:'50%', marginLeft:10}}>Comprar</Button>
+              </div>
+              </CardBody>
+              </div>
+            </Card></div>)
           }
-          {
-            data.map(i=> <img src={i.img}/>)
-          }
-          {
-
-          }
-
+          
         </>
       )}
-    </>
-    
+    </div>
+          <div style={{display:'flex', flexDirection:'column',alignItems:'center'}}><Pie></Pie></div>
+          </>
   );
 };
 

@@ -1,33 +1,3 @@
-// import { Navbar as ReactstrapNavBar } from "reactstrap";
-// import { NavItem } from "reactstrap";
-// import { NavLink } from "reactstrap";
-
-// const Navbar = () => {
-//     // size
-//     return (
-//       // <ReactstrapLabel for="user">{props.children}</ReactstrapLabel>
-        
-//         <ReactstrapNavBar color="danger" dark expand="md">
-//             <NavItem>
-//                     <NavLink href="/login">Components</NavLink>
-//             </NavItem>
-//             <NavItem>
-//                     <NavLink href="/dashboard">Hola</NavLink>
-//             </NavItem>
-//         </ReactstrapNavBar>
-        
-//         // <ReactstrapLabel
-//         // // className={size}
-//         //     for={forHtml}
-//         // >
-//         // {children}
-//         // </ReactstrapLabel>
-//     );
-// };
-
-
-// export default Navbar;
-
 import React, { useState } from 'react';
 import {
   Collapse,
@@ -45,7 +15,7 @@ import {
 } from 'reactstrap';
 import { Formik, Field, Form } from "formik";
 
-function Example(args) {
+function Barra(args) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -68,10 +38,6 @@ function Example(args) {
             initialValues={{
               user: "",
             }}
-            // validationSchema={SearchSchema}
-            // onSubmit={(values) => {
-            //   searchUser(values);
-            // }}
           >
             {({ errors, touched }) => (
               <Form>
@@ -111,4 +77,4 @@ function Example(args) {
   );
 }
 
-export default Example;
+export default Barra;
