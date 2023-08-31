@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const getUsers = async () => {
-  let users = await axios
+const getproductos = async () => {
+  let productos = await axios
     .get("https://ecommerce-uwvs.onrender.com/productos")
     .then(function (response) {
       // handle success
@@ -12,7 +12,7 @@ const getUsers = async () => {
       console.log(error);
     });
 
-    return users
+    return productos
 };
 
-export { getUsers };
+export { getproductos };
